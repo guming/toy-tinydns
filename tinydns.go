@@ -55,7 +55,7 @@ func getNS(reply *dns.Msg) string {
 }
 
 func dnsQuery(domainName string, server net.IP) *dns.Msg {
-	fmt.Printf("dig -r @%s %s\n", server.String(), domainName)
+	fmt.Printf("dig @%s %s\n", server.String(), domainName)
 	msg := new(dns.Msg)
 	msg.SetQuestion(domainName, dns.TypeA)
 	c := new(dns.Client)
